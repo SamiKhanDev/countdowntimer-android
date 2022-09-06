@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nevgraph"
+    app:startDestination="@id/countdownFragment">
+
+    <fragment
+        android:id="@+id/menufragment"
+        android:name="com.example.countdown.menufragment"
+        android:label="fragment_menufragment"
+        tools:layout="@layout/fragment_menufragment" >
+        <action
+            android:id="@+id/action_menufragment_to_countdownFragment"
+            app:destination="@id/countdownFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countdownFragment"
+        android:name="com.example.countdown.countdownFragment"
+        android:label="fragment_countdown"
+        tools:layout="@layout/fragment_countdown" >
+        <action
+            android:id="@+id/action_countdownFragment_to_menufragment"
+            app:destination="@id/menufragment" />
+    </fragment>
+</navigation>

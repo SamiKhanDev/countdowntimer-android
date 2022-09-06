@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "58802462534",
+    "firebase_url": "https://countdown-80141-default-rtdb.firebaseio.com",
+    "project_id": "countdown-80141",
+    "storage_bucket": "countdown-80141.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58802462534:android:cba721e7e1e51696be0f47",
+        "android_client_info": {
+          "package_name": "com.example.countdown"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58802462534-aece12n03l4o8od009q9nd811lm15u0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq9wBKqsj-foMVQDbJ6EsWCgsexKDSijI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58802462534-aece12n03l4o8od009q9nd811lm15u0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
