@@ -14,7 +14,7 @@ public class DataRepository implements FirBaseHandler.DataCallBack {
     public ArrayList<EventEntry> Events = new ArrayList<>();
     private DataLoadListener listener;
     public DataReloadListener listener2;
-FirBaseHandler handler;
+    FirBaseHandler handler;
     public static DataRepository INSTANCE;
 
 
@@ -26,11 +26,10 @@ FirBaseHandler handler;
     }
 
 
-    public void setListener(DataLoadListener listener,DataReloadListener listener2) {
+    public void setListener(DataLoadListener listener, DataReloadListener listener2) {
         this.listener = listener;
-        this.listener2= listener2;
+        this.listener2 = listener2;
     }
-
 
 
     private DataRepository() {
@@ -59,7 +58,7 @@ FirBaseHandler handler;
     public void onDataRecivied(ArrayList<Theme> list) {
         themes = list;
 
-        if(listener!=null){
+        if (listener != null) {
 
 
             listener.onThemeLoaded();
@@ -69,23 +68,24 @@ FirBaseHandler handler;
     @Override
     public void onEventsReceived(ArrayList<EventEntry> list) {
         ArrayList<EventEntry> filteredList = (ArrayList<EventEntry>) list.stream().filter(eventEntry ->
-                System.currentTimeMillis() < DateUtils.getDateFromString( eventEntry.date)
+                System.currentTimeMillis() < DateUtils.getDateFromString(eventEntry.date)
                         .getTime())
                 .collect(Collectors.toList());
         Collections.sort(filteredList, (o1, o2) -> {
             Long time = DateUtils.getDateFromString(o1.getDate()).getTime();
             Long time2 = DateUtils.getDateFromString(o2.getDate()).getTime();
-            long res =  time-time2;
+            long res = time - time2;
             return (int) res;
         });
-        this.Events =  filteredList;
+        this.Events = filteredList;
         listener2.onDataReceived(this.Events);
     }
 
-    interface DataLoadListener{
+    interface DataLoadListener {
         void onThemeLoaded();
-  }
-  interface DataReloadListener{
+    }
+
+    interface DataReloadListener {
         void onDataReceived(ArrayList<EventEntry> list);
-  }
+    }
 }
